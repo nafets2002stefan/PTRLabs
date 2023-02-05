@@ -210,6 +210,67 @@ object MainObject {
     finalMap
   }
 
+  def commonPrefixHelper(firstString: String, secondString: String): String = {
+    var result = ""
+    val minimalString = min(firstString.length, secondString.length)
+
+    for (i <- 0 until minimalString) {
+      if (firstString(i) == secondString(i))
+        result += firstString(i)
+      else {
+        return result
+      }
+    }
+    result
+  }
+
+  def commonPrefix(list: List[String]) : String = {
+
+    if(list.isEmpty) ""
+    else {
+      list.reduce((firstString, secondString) => commonPrefixHelper(firstString, secondString))
+    }
+  }
+
+  def toRoman(number : String) : String = {
+    val rules = List(
+      ("M", 1000),
+      ("CM", 900),
+      ("D", 500),
+      ("CD", 400),
+      ("C", 100),
+      ("XC", 90),
+      ("L", 50),
+      ("XL", 40),
+      ("X", 10),
+      ("IX", 9),
+      ("V", 5),
+      ("IV", 4),
+      ("I", 1))
+
+    var result = ""
+    var calculator = number.toInt
+
+    for((roman, arabic) <- rules)
+      while (calculator >= arabic) {
+        result += roman
+        calculator -= arabic
+      }
+    result
+  }
+
+  def factorize(number : Int) : List[Int] = {
+    var finalList = List[Int]()
+    var n = number
+
+    for( i <- 2 to n)
+      while(n % i == 0) {
+        finalList = i :: finalList
+        n = n / i
+      }
+    finalList
+  }
+
   def main(args: Array[String]): Unit = {
 //    println(isPrime(8))
 //    println(cylinderArea(3,4))
@@ -227,7 +288,9 @@ object MainObject {
 //    println(decode("oruhp", 3))
 //    println(lettersCombinations("23"))
 //    println(groupAnagrams(List(" eat " , " tea " , " tan " , " ate " , " nat " , " bat ")))
-
+//    println(commonPrefix(List(" fleight " ," fleio " ," fleo ")))
+//    println(toRoman("19"))
+//    println(factorize(42))
   }
 
 }
