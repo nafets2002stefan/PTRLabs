@@ -287,7 +287,7 @@ object MainObject {
 //    println(encode("lorem", 3))
 //    println(decode("oruhp", 3))
 //    println(lettersCombinations("23"))
-//    println(groupAnagrams(List(" eat " , " tea " , " tan " , " ate " , " nat " , " bat ")))
+    println(groupAnagrams(List(" eat " , " tea " , " tan " , " ate " , " nat " , " bat ")))
 //    println(commonPrefix(List(" fleight " ," fleio " ," fleo ")))
 //    println(toRoman("19"))
 //    println(factorize(42))
