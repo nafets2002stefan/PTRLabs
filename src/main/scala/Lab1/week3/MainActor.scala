@@ -53,20 +53,21 @@ class AverageActor(var totalSum: Double, var count: Int) extends Actor {
       println("Current average is " + average)
   }
 }
-//  fourth task
+
+//fourth task
 
 object Main {
   def main(args: Array[String]) : Unit = {
 
 //    first task
     val system = ActorSystem("SimpleSystem")
-    val printActor = system.actorOf(Props[PrintActor], "PrintActor")
-    printActor ! "Hello My friends"
+//    val printActor = system.actorOf(Props[PrintActor], "PrintActor")
+//    printActor ! "Hello My friends"
 //    second task
-    val Pid = system.actorOf(Props[ModifyActor], "ModifyActor")
-    Pid ! 10
-    Pid ! "Hello World"
-    Pid ! (10, "Hello")
+//    val Pid = system.actorOf(Props[ModifyActor], "ModifyActor")
+//    Pid ! 10
+//    Pid ! "Hello World"
+//    Pid ! (10, "Hello")
 
 //  third task
     val firstActor = system.actorOf(Props[FirstActor], "firstActor")
@@ -74,9 +75,10 @@ object Main {
 
 //    fourth task
 
-    val average = system.actorOf(Props(new AverageActor(0.0, 0)), "averageActor")
-    average ! 10.0
-    average ! 5.0
-    average ! 10.0
+//    val average = system.actorOf(Props(new AverageActor(0.0, 0)), "averageActor")
+//    average ! 10.0
+//    average ! 5.0
+//    average ! 10.0
+
   }
 }
